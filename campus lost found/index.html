@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Campus Lost & Found Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🎓 Smart Campus Lost & Found Portal</h1>
+        <p>Centralized Lost Item Recovery & Verification System</p>
+    </header>
+
+    <div class="container">
+        <!-- Dashboard Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3 id="totalCount">0</h3>
+                <p>Total Reports</p>
+            </div>
+            <div class="stat-card lost">
+                <h3 id="lostCount">0</h3>
+                <p>Lost Items</p>
+            </div>
+            <div class="stat-card found">
+                <h3 id="foundCount">0</h3>
+                <p>Found Items</p>
+            </div>
+            <div class="stat-card resolved">
+                <h3 id="resolvedCount">0</h3>
+                <p>Claimed / Resolved</p>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <!-- Report Form -->
+            <div class="form-section">
+                <h2>Report an Item</h2>
+                <form id="itemForm">
+                    <label>Report Type</label>
+                    <select id="type" required>
+                        <option value="Lost">Lost Item</option>
+                        <option value="Found">Found Item</option>
+                    </select>
+
+                    <label>Item Name</label>
+                    <input type="text" id="itemName" placeholder="e.g., Blue Dell Laptop Bag" required>
+
+                    <label>Category</label>
+                    <select id="category" required>
+                        <option value="Electronics">Electronics</option>
+                        <option value="ID Cards / Documents">ID Cards / Documents</option>
+                        <option value="Books & Notes">Books & Notes</option>
+                        <option value="Accessories">Accessories / Keys</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label>Campus Location</label>
+                    <input type="text" id="location" placeholder="e.g., Central Library, 2nd Floor" required>
+
+                    <label>Date</label>
+                    <input type="date" id="date" required>
+
+                    <label>Description & Identification Marks</label>
+                    <textarea id="description" rows="3" placeholder="Mention color, brand, or unique stickers..." required></textarea>
+
+                    <label>Student Name & Contact (Phone/Email)</label>
+                    <input type="text" id="contact" placeholder="e.g., Rahul Sharma - 9876543210" required>
+
+                    <button type="submit" class="btn-primary">Submit Report</button>
+                </form>
+            </div>
+
+            <!-- Items Feed -->
+            <div class="list-section">
+                <div class="filter-bar">
+                    <input type="text" id="searchInput" placeholder="Search by item name or location...">
+                    <select id="filterType">
+                        <option value="All">All Reports</option>
+                        <option value="Lost">Lost Only</option>
+                        <option value="Found">Found Only</option>
+                        <option value="Resolved">Resolved Only</option>
+                    </select>
+                </div>
+
+                <div id="itemsContainer" class="items-grid">
+                    <!-- Dynamic Cards Appear Here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>BCA Minor Project | Developed using HTML5, CSS3 & JavaScript (LocalStorage)</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
